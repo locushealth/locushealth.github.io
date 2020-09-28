@@ -48,5 +48,7 @@ function showPage() {
   document.getElementById("main-content").style.display = "block";
   if (localStorage.getItem("mode") == "dark") {
   document.body.classList.add("dark");
+  document.getElementById("moon").classList.add("moongone");
+  document.getElementById("sun").classList.remove("sungone");
   }
 }
