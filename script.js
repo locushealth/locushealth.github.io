@@ -6,12 +6,16 @@ document.getElementById("sun").onclick = function functionName() {
   document.getElementById("sun").classList.add("sungone");
   document.getElementById("moon").classList.remove("moongone");
   document.body.classList.remove("dark");
+  localStorage.clear();
+  localStorage.setItem("mode" , "light");
 }
 
 document.getElementById("moon").onclick = function functionName() {
   document.getElementById("moon").classList.add("moongone");
   document.getElementById("sun").classList.remove("sungone");
   document.body.classList.add("dark");
+  localStorage.clear();
+  localStorage.setItem("mode" , "dark");
 }
 
 var btn = document.getElementById("nav-toggle");
@@ -42,4 +46,7 @@ function loadfunc() {
 function showPage() {
   document.getElementById("loader").style.display = "none";
   document.getElementById("main-content").style.display = "block";
+  if (localStorage.getItem("mode") == "dark") {
+  document.body.classList.add("dark");
+  }
 }
