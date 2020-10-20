@@ -320,6 +320,10 @@ margin-top: 4px;
   transition: all 0.6s;
   background-color: rgb(246,246,246);
   font-family: Ubuntu,verdana,helvetica;
+  a{
+    text-decoration: none;
+    color:inherit;
+  }
 
 }
 
@@ -865,6 +869,9 @@ path:hover{
   font-size: 22px;
   margin: 30px;
 }
+.dark .modal-content{
+  background-color: #000278;
+}
 #close-btn{
   text-align: center;
   color: white;
@@ -882,4 +889,11 @@ path:hover{
 #close-btn:hover{
   background-color: white;
   color: black;
+}
+#main-404{
+  
+  h2{
+    color: #000278;
+    mix-blend-mode: color;
+  }
 }

@@ -57,8 +57,8 @@ function showPage() {
   document.getElementById("sun").classList.remove("sungone");
   }
   window.scrollTo(0 , localStorage.getItem("offset"));
-  setTimeout(checkoffset , 1501);
   generatemap(localStorage.getItem("mapmode"));
+  setTimeout(checkoffset , 1501);
 }
 
 function checkoffset() {
@@ -116,7 +116,7 @@ function generatemap(x){
     case "sedatives":
       sedativesmap();
       break;
-    default:
+    case null:
       alcoholmap();
       break;
   }

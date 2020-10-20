@@ -416,6 +416,11 @@ html {
   font-family: Ubuntu,verdana,helvetica;
 }
 
+#mainfooter a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .dark #mainfooter {
   background-color: #959596;
 }
@@ -996,6 +1001,10 @@ path:hover {
   margin: 30px;
 }
 
+.dark .modal-content {
+  background-color: #000278;
+}
+
 #close-btn {
   text-align: center;
   color: white;
@@ -1015,5 +1024,10 @@ path:hover {
 #close-btn:hover {
   background-color: white;
   color: black;
+}
+
+#main-404 h2 {
+  color: #000278;
+  mix-blend-mode: color;
 }
 /*# sourceMappingURL=style.css.map */
