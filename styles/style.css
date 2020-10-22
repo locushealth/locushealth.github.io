@@ -8,7 +8,6 @@
 }
 
 html {
-  scroll-behavior: smooth;
   font-family: Ubuntu,verdana,helvetica;
 }
 
@@ -859,11 +858,11 @@ html {
 #arrow-up {
   position: fixed;
   z-index: 9999;
-  font-size: 3rem;
+  font-size: 6vw;
   bottom: 0;
   right: 0;
-  margin-bottom: 7%;
-  margin-right: 20px;
+  margin-bottom: 11vw;
+  margin-right: 2vw;
   opacity: 0.35;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;

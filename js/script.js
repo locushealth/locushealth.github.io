@@ -80,9 +80,17 @@ if (window.innerWidth < 770) {
   $("#navbar").css("display" , "block");
 }
 
-document.getElementById("arrow-up").onclick = function () {
-  window.scrollTo(0 , 0);
-}
+document.getElementById("arrow-up").onclick = function startscroll() {
+  var scrollfunc = setInterval(scrollup , 1);
+  
+  function scrollup() {
+      if (pageYOffset > 0) {
+          scrollTo(0 , pageYOffset-(pageYOffset/70));
+      } else {
+          clearInterval(scrollfunc);
+      }
+  }
+  }
 
 function generatecolor(x) {
   var red = Math.floor((Math.random() * 255) + 1); 
