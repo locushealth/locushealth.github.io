@@ -1,0 +1,26 @@
+body {
+  text-align: center;
+}
+
+button {
+  font-size: 2vw;
+  margin-top: 30px;
+  padding: 2%;
+  background-color: aqua;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+button:hover {
+  background-color: blue;
+  color: aliceblue;
+}
+
+#mainfooter {
+  text-align: center;
+  bottom: 0;
+}
+/*# sourceMappingURL=ab.css.map */
