@@ -6,16 +6,14 @@ document.getElementById("sun").onclick = function functionName() {
   document.getElementById("sun").classList.add("sungone");
   document.getElementById("moon").classList.remove("moongone");
   document.body.classList.remove("dark");
-  localStorage.clear();
-  localStorage.setItem("mode" , "light");
+  localStorage.setItem("viewMode" , "light");
 }
 
 document.getElementById("moon").onclick = function functionName() {
   document.getElementById("moon").classList.add("moongone");
   document.getElementById("sun").classList.remove("sungone");
   document.body.classList.add("dark");
-  localStorage.clear();
-  localStorage.setItem("mode" , "dark");
+  localStorage.setItem("viewMode" , "dark");
 }
 
 var btn = document.getElementById("nav-toggle");
@@ -51,7 +49,7 @@ function showPage() {
   }
   document.getElementById("loader-wrapper").style.display = "none";
   document.getElementById("main-content").style.display = "block";
-  if (localStorage.getItem("mode") == "dark") {
+  if (localStorage.getItem("viewMode") == "dark") {
   document.body.classList.add("dark");
   document.getElementById("moon").classList.add("moongone");
   document.getElementById("sun").classList.remove("sungone");
@@ -59,6 +57,9 @@ function showPage() {
   window.scrollTo(0 , localStorage.getItem("offset"));
   generatemap(localStorage.getItem("mapmode"));
   setTimeout(checkoffset , 1501);
+  if (localStorage.getItem("mode") !== null) {
+    localStorage.removeItem("mode");
+  }
 }
 
 function checkoffset() {
