@@ -286,7 +286,7 @@ html {
   font-size: 24px;
 }
 
-#hr1 {
+.hr1 {
   width: 130px;
   background-color: blue;
   border: 3px solid blue;
@@ -295,7 +295,7 @@ html {
   transition: width 0.5s;
 }
 
-.heading:hover #hr1 {
+.heading:hover .hr1 {
   width: 250px;
 }
 
@@ -802,10 +802,10 @@ html {
   .dark #e div {
     border: 0.01rem solid white;
   }
-  #hr1 {
+  .hr1 {
     width: 110px;
   }
-  #hr1:hover {
+  .hr1:hover {
     width: 180px;
   }
   .para {
