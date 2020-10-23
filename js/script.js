@@ -83,8 +83,8 @@ if (window.innerWidth < 770) {
 function startscroll(object) {
   var scrollfunc = setInterval(scrolldown , 1);
   var end = object.offsetTop - document.getElementById("mainfooter").offsetHeight-50;
-  if (object == document.getElementById("contact") && window.innerWidth < 770) {
-    var end = object.offsetTop - (document.getElementById("mainfooter").offsetHeight*3)-25;
+  if (object == document.getElementById("contact")) {
+    end = document.body.scrollHeight - document.documentElement.clientHeight;
     return end;
   }
   function scrolldown() {
@@ -93,7 +93,7 @@ function startscroll(object) {
       } else if (pageYOffset == document.body.offsetHeight) {
         clearInterval(scrollfunc);
       } else {
-        scrollTo(0 , pageYOffset+20);
+        window.scrollTo(0 , pageYOffset+28);
     }
   }
 }
@@ -103,7 +103,7 @@ function startscrollup() {
   var scrollupfunc = setInterval(scrollup , 1);
   function scrollup() {
       if (pageYOffset > 0) {
-          scrollTo(0 , pageYOffset-(pageYOffset/70));
+          scrollTo(0 , pageYOffset-(pageYOffset/50));
       } else {
           clearInterval(scrollupfunc);
       } 
