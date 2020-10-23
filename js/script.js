@@ -80,17 +80,36 @@ if (window.innerWidth < 770) {
   $("#navbar").css("display" , "block");
 }
 
-document.getElementById("arrow-up").onclick = function startscroll() {
-  var scrollfunc = setInterval(scrollup , 1);
-  
+function startscroll(object) {
+  var scrollfunc = setInterval(scrolldown , 1);
+  var end = object.offsetTop - document.getElementById("mainfooter").offsetHeight-50;
+  if (object == document.getElementById("contact") && window.innerWidth < 770) {
+    var end = object.offsetTop - (document.getElementById("mainfooter").offsetHeight*3)-25;
+    return end;
+  }
+  function scrolldown() {
+      if (pageYOffset > end) {
+        clearInterval(scrollfunc);
+      } else if (pageYOffset == document.body.offsetHeight) {
+        clearInterval(scrollfunc);
+      } else {
+        scrollTo(0 , pageYOffset+20);
+    }
+  }
+}
+
+
+function startscrollup() {
+  var scrollupfunc = setInterval(scrollup , 1);
   function scrollup() {
       if (pageYOffset > 0) {
           scrollTo(0 , pageYOffset-(pageYOffset/70));
       } else {
-          clearInterval(scrollfunc);
-      }
-  }
-  }
+          clearInterval(scrollupfunc);
+      } 
+    }
+}
+
 
 function generatecolor(x) {
   var red = Math.floor((Math.random() * 255) + 1); 
@@ -156,3 +175,5 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+document.getElementById("arrow-up").setAttribute("onclick" , "startscrollup()");
