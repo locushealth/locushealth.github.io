@@ -1024,4 +1024,16 @@ path:hover {
   background-color: white;
   color: black;
 }
+
+.apic {
+  width: 24vw;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  border-radius: 3%;
+}
+
+.apic:hover {
+  width: 35vw;
+  height: auto;
+}
 /*# sourceMappingURL=style.css.map */
