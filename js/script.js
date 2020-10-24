@@ -1,19 +1,26 @@
+var browser;
+
 function myFunction() {
   x.classList.toggle("change");
 }
 
-document.getElementById("sun").onclick = function functionName() {
+document.getElementById("moon").setAttribute("onclick" , "darkMode()");
+document.getElementById("sun").setAttribute("onclick" , "lightMode()");
+
+function lightMode() {
   document.getElementById("sun").classList.add("sungone");
   document.getElementById("moon").classList.remove("moongone");
   document.body.classList.remove("dark");
   localStorage.setItem("viewMode" , "light");
+  document.getElementById("logo").setAttribute("src" , "img/8.png");
 }
 
-document.getElementById("moon").onclick = function functionName() {
+function darkMode() {
   document.getElementById("moon").classList.add("moongone");
   document.getElementById("sun").classList.remove("sungone");
   document.body.classList.add("dark");
   localStorage.setItem("viewMode" , "dark");
+  document.getElementById("logo").setAttribute("src" , "img/10.png");
 }
 
 var btn = document.getElementById("nav-toggle");
@@ -50,15 +57,22 @@ function showPage() {
   document.getElementById("loader-wrapper").style.display = "none";
   document.getElementById("main-content").style.display = "block";
   if (localStorage.getItem("viewMode") == "dark") {
-  document.body.classList.add("dark");
-  document.getElementById("moon").classList.add("moongone");
-  document.getElementById("sun").classList.remove("sungone");
+    darkMode();
+  } else {
+    lightMode();
   }
   window.scrollTo(0 , localStorage.getItem("offset"));
   generatemap(localStorage.getItem("mapmode"));
   setTimeout(checkoffset , 1501);
   if (localStorage.getItem("mode") !== null) {
     localStorage.removeItem("mode");
+  }
+  checkBrowser();
+  if (browser == 3) {
+    chromfunc();
+  }
+  if (browser == 1) {
+    safarifunc();
   }
 }
 
@@ -176,4 +190,57 @@ window.onclick = function(event) {
   }
 }
 
-document.getElementById("arrow-up").setAttribute("onclick" , "startscrollup()");
+function checkBrowser() { 
+  let userAgentString =  
+      navigator.userAgent; 
+
+  let chromeAgent =  
+      userAgentString.indexOf("Chrome") > -1; 
+
+  let IExplorerAgent =  
+      userAgentString.indexOf("MSIE") > -1 ||  
+      userAgentString.indexOf("rv:") > -1; 
+
+  let safariAgent =  
+      userAgentString.indexOf("Safari") > -1; 
+         
+  if ((chromeAgent) && (safariAgent))  
+      safariAgent = false; 
+
+  if (safariAgent == true) {
+      console.log("Browser Detected : Safari");
+      browser = 1;
+      return browser;
+  } else if (IExplorerAgent == true) {
+      console.log("Browser Detected : Internet Explorer");
+      browser = 2;
+      return browser;
+  } else {
+      console.log("Browser Detected : Chrome/Opera/Edge/Firefox/Other");
+      browser = 3;
+      return browser;
+  }
+}
+
+function goup() {
+  window.scrollTo(0 , 0);
+};
+
+function chromfunc() {
+  document.documentElement.style.scrollBehavior = "smooth";
+  document.getElementById("arrow-up").setAttribute("onclick" , "goup()");
+  document.getElementsByClassName("nav1")[0].setAttribute("href" , "#vision");
+  document.getElementsByClassName("nav1")[1].setAttribute("href" , "#whatwedo");
+  document.getElementsByClassName("nav1")[2].setAttribute("href" , "#about");
+  document.getElementsByClassName("nav1")[3].setAttribute("href" , "#contact");
+
+}
+
+function safarifunc() {
+  document.getElementById("arrow-up").setAttribute("onclick" , "startscrollup()");
+  document.getElementsByClassName("nav1")[0].setAttribute("onclick" , "startscroll(document.getElementById(\"vision\"))");
+  document.getElementsByClassName("nav1")[1].setAttribute("onclick" , "startscroll(document.getElementById(\"whatwedo\"))");
+  document.getElementsByClassName("nav1")[2].setAttribute("onclick" , "startscroll(document.getElementById(\"about\"))");
+  document.getElementsByClassName("nav1")[3].setAttribute("onclick" , "startscroll(document.getElementById(\"contact\"))");
+  
+}
