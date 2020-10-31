@@ -47,13 +47,6 @@ function loadfunc() {
 }
 
 function showPage() {
-  var now = new Date().getTime();
-  if ((now - localStorage.getItem("lastviewed")) > 28800000){
-    modal.style.display = "block";
-  }
-  if (localStorage.getItem("lastviewed") === null){
-    modal.style.display = "block";
-  }
   document.getElementById("loader-wrapper").style.display = "none";
   document.getElementById("main-content").style.display = "block";
   if (localStorage.getItem("viewMode") == "dark") {
@@ -242,5 +235,46 @@ function safarifunc() {
   document.getElementsByClassName("nav1")[1].setAttribute("onclick" , "startscroll(document.getElementById(\"whatwedo\"))");
   document.getElementsByClassName("nav1")[2].setAttribute("onclick" , "startscroll(document.getElementById(\"about\"))");
   document.getElementsByClassName("nav1")[3].setAttribute("onclick" , "startscroll(document.getElementById(\"contact\"))");
-  
+}
+
+const facts = [
+  "The harmful use of alcohol results in 3.3 million deaths each year.",
+  "On average every person in the world aged 15 years or older drinks 6.2 litres of pure alcohol per year.",
+  "Less than half the population (38.3%) actually drinks alcohol, this means that those who do drink consume on average 17 litres of pure alcohol annually.",
+  "Some 31 million people are suffering drug use disorders.",
+  "Almost 11 million people inject drugs, of which 1.3 million are living with HIV.",
+  "Almost 21 million Americans have at least one addiction, yet only 10% of them receive treatment.",
+  "Drug overdose deaths have more than tripled since 1990.",
+  "From 1999 to 2017, more than 700,000 Americans died from overdosing on a drug.",
+  "Alcohol and drug addiction cost the U.S. economy over $600 billion every year.",
+  "In 2017, 34.2 million Americans committed DUI, 21.4 million under the influence of alcohol and 12.8 million under the influence of drugs.",
+  "About 20% of Americans who have depression or an anxiety disorder also have a substance use disorder.",
+  "More than 90% of people who have an addiction started to drink alcohol or use drugs before they were 18 years old.",
+  "Americans between the ages of 18 and 25 are most likely to use addictive drugs.",
+  "Every year, worldwide, alcohol is the cause of 5.3% of deaths (or 1 in every 20).",
+  "On average, 30 Americans die every day in an alcohol-related car accident, and six Americans die every day from alcohol poisoning.",
+  "About 300 million people throughout the world have an alcohol use disorder.",
+  "About 88,000 people die as a result of alcohol every year in the United States.",
+  "About 6% of American adults (about 15 million people have an alcohol use disorder, but only about 7% of Americans who are addicted to alcohol ever receive treatment.",
+  "Men between the ages of 18 and 25 are most likely to binge drink and become alcoholics.",
+  "In 2017, approximately 2.3 million Americans between the ages of 12 and 17 and 2.4 million Americans between the ages of 18 and 25 started to drink alcohol.",
+  "In 2018, a historically-low percentage of American high school students reported drinking alcohol. Only 18% of 10th graders and 30% of 12th graders admitted to drinking underage in 2018 compared to 25% of 10th graders and 39% of 12th graders in 2013."
+  ];
+function generatefact() {
+var i = Math.floor(Math.random() * (facts.length));
+document.getElementById("fact").innerHTML = facts[i];
+}
+generatefact();
+
+const tl = gsap.timeline({ defaults: { ease: "power1.out" } });
+
+if (document.getElementById("arrow-up").style.display = "block"){
+  const arrowloop = setInterval(arrowanimate , 3000);
+}
+ var degrees = 360;
+function arrowanimate() {
+tl.to("#arrow-up" , {y:-30 + "vh" , duration:0.5});
+tl.to("#arrow-up" , {rotate:degrees +"deg" , duration:1} , "-=0.5");
+tl.to("#arrow-up" , {y:"0vh" , duration:0.5});
+degrees+=360;
 }

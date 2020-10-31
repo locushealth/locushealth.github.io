@@ -759,14 +759,13 @@ margin-top: 4px;
   margin-right: 2vw;
   opacity: 0.35;
   transition: all 0.3s;
-  transform: rotate(-50deg);
   cursor: pointer;
   display: none;
 }
 
+
 #arrow-up:hover{
   opacity: 1;
-  transform: rotate(0deg);
 }
 
 #scale{
@@ -898,4 +897,25 @@ path:hover{
 .apic:hover{
   width:35vw;
   height:auto;
+}
+
+
+#new-fact{
+  border:none;
+  outline:none;
+  background-color:#80fff8;
+  color:black;
+  padding:15px;
+  font-size: 20px;
+  cursor:pointer;
+  transition: all 0.5s;
+  p{
+    margin-right:10%;
+    margin-left:10% ;
+  }
+}
+
+#new-fact:hover{
+  background-color: blue;
+  color:white;
 }

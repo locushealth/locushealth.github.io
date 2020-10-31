@@ -866,16 +866,12 @@ html {
   opacity: 0.35;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-  -webkit-transform: rotate(-50deg);
-          transform: rotate(-50deg);
   cursor: pointer;
   display: none;
 }
 
 #arrow-up:hover {
   opacity: 1;
-  -webkit-transform: rotate(0deg);
-          transform: rotate(0deg);
 }
 
 #scale {
@@ -1035,5 +1031,27 @@ path:hover {
 .apic:hover {
   width: 35vw;
   height: auto;
+}
+
+#new-fact {
+  border: none;
+  outline: none;
+  background-color: #80fff8;
+  color: black;
+  padding: 15px;
+  font-size: 20px;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+#new-fact p {
+  margin-right: 10%;
+  margin-left: 10%;
+}
+
+#new-fact:hover {
+  background-color: blue;
+  color: white;
 }
 /*# sourceMappingURL=style.css.map */
