@@ -165,23 +165,6 @@ window.onscroll = function () {
     document.getElementById("arrow-up").style.display = "none";
   }
 }
-
-var modal = document.getElementsByClassName("modal")[0];
-
-setInterval( function () {
-  document.getElementsByClassName("modal-content")[0].style.width = (window.innerWidth-100); }
- , 1);
-
-document.getElementById("close-btn").onclick = function () {
-  modal.style.display = "none";
-}
-
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-
 function checkBrowser() { 
   let userAgentString =  
       navigator.userAgent; 
