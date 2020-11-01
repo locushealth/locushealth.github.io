@@ -268,13 +268,11 @@ generatefact();
 
 const tl = gsap.timeline({ defaults: { ease: "power1.out" } });
 
-if (document.getElementById("arrow-up").style.display = "block"){
-  const arrowloop = setInterval(arrowanimate , 3000);
-}
- var degrees = 360;
-function arrowanimate() {
-tl.to("#arrow-up" , {y:-30 + "vh" , duration:0.5});
-tl.to("#arrow-up" , {rotate:degrees +"deg" , duration:1} , "-=0.5");
-tl.to("#arrow-up" , {y:"0vh" , duration:0.5});
-degrees+=360;
-}
+document.body.classList.add("marginclass");
+document.documentElement.style.overflow = "hidden";
+
+tl.to("#noloc" , {opacity:0 , duration:1 ,delay:7});
+tl.to("#loc" , {opacity:1 , duration:1 } , "-=1");
+tl.to("#landing"  , {y:"-110%" , duration:2 , delay:3} );
+tl.to("html" , {overflow:"visible" , duration:0.1} , "-=0.7");
+tl.to("body" , {margin:"8px" , duration:0.1}, "-=0.7");

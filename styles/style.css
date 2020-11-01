@@ -3,6 +3,10 @@
   src: url("Ubuntu/Ubuntu-Regular.ttf");
 }
 
+.marginclass {
+  margin: 0;
+}
+
 #main-content {
   display: none;
 }
@@ -224,6 +228,11 @@ html {
   margin-top: 4px;
 }
 
+body {
+  -webkit-transition: all 0.7s;
+  transition: all 0.7s;
+}
+
 #moon {
   float: right;
   font-size: 28px;
@@ -231,6 +240,7 @@ html {
   cursor: pointer;
   position: -webkit-sticky;
   position: sticky;
+  z-index: -7;
 }
 
 .moongone {
@@ -238,6 +248,7 @@ html {
 }
 
 #sun {
+  z-index: -7;
   float: right;
   color: #f7c76d;
   font-size: 28px;
@@ -868,10 +879,14 @@ html {
   transition: all 0.3s;
   cursor: pointer;
   display: none;
+  -webkit-transform: rotate(-50deg);
+          transform: rotate(-50deg);
 }
 
 #arrow-up:hover {
   opacity: 1;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
 }
 
 #scale {
@@ -1053,5 +1068,29 @@ path:hover {
 #new-fact:hover {
   background-color: blue;
   color: white;
+}
+
+#landing {
+  position: absolute;
+  background-color: aqua;
+  width: 100%;
+  height: 100%;
+}
+
+#content {
+  text-align: center;
+}
+
+#content p {
+  font-size: 4vw;
+  position: absolute;
+  left: 10%;
+  top: 35%;
+  z-index: 1;
+  right: 5%;
+}
+
+#content #loc {
+  opacity: 0;
 }
 /*# sourceMappingURL=style.css.map */
