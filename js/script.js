@@ -259,11 +259,11 @@ tl.to("#landing"  , {y:"-110%" , duration:2 , delay:3} );
 tl.to("html" , {overflow:"visible" , duration:0.1} , "-=0.7");
 tl.to("body" , {margin:"8px" , duration:0.1}, "-=0.7");
 
-var offsetthing = setInterval(function () {
-  if (document.getElementsByTagName("body")[0].style.margin == "8px") {
-    window.scrollTo(0 , localStorage.getItem("offset"));
-    clearInterval(offsetthing);
-  }
-} , 1);
+// var offsetthing = setInterval(function () {
+//   if (document.getElementsByTagName("body")[0].style.margin == "8px") {
+//     window.scrollTo(0 , localStorage.getItem("offset"));
+//     clearInterval(offsetthing);
+//   }
+// } , 1);
 
-offsetthing;
+// offsetthing;
